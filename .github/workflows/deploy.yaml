@@ -32,6 +32,7 @@ jobs:
           gh release download -R rust-lang/mdBook -p "${archive}" -D mdbook
           tar -xzf mdbook/"${archive}" -C mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
+          mdbook --version
 
       - name: Build the book
         run: mdbook build ./docs
